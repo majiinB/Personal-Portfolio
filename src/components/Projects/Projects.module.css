@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background: rgba(0, 0, 0, 0.51);
+    border-radius: 26px;
+    transform: translateY(-130px);
+}
+
+.projectsHeaderContainer {
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    margin: 3%;
+}
+
+.headerProjects {
+    color: #F9F9F7;
+    font-size: 35px;
+    font-family: 'Saira Condensed', 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    margin-left: 10px;
+    /* Adjust margin as needed */
+}
+
+.projectsHeaderShape {
+    width: .5rem;
+    height: 2rem;
+    background: #8B8481;
+}
+
+.contentInsideBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2%;
+    box-sizing: border-box;
+}
+
+.textHolder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: #F9F9F7;
+    font-size: 18px;
+    font-family: 'Saira Condensed', 'roboto', 'Inter';
+    font-weight: 400;
+    text-transform: capitalize;
+    word-wrap: break-word;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.card {
+    width: 500px;
+    height: 600px;
+    background: #181516;
+    padding: 5%;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.08);
+}
+
+.cardContent {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-right: 4%;
+}
+
+.imageHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.imageHolder img {
+    max-height: 200px;
+    max-width: 300px;
+}

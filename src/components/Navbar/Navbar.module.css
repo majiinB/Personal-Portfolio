@@ -1,0 +1,124 @@
+@import '../../vars.css';
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+
+.navbar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    width: 100%;
+    z-index: 1000;
+    background: transparent;
+    /* Set a transparent background initially */
+    transition: background-color 0.3s ease;
+    /* Use background-color for the transition */
+}
+
+.scrolled {
+    background-color: rgba(139, 132, 129, 1);
+    /* Change to your desired background color */
+}
+
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.menuItems {
+    display: flex;
+    gap: 59px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menuItems a {
+    color: #181516;
+    font-size: 16px;
+    font-family: 'Saira Condensed', 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    text-decoration: none;
+    padding-top: 1.2vh;
+    padding-bottom: 1.2vh;
+    padding-left: 1.6vh;
+    padding-right: 1.6vh;
+    border-radius: 3px;
+    transition: color 0.2s ease-in, background-color 0.3s ease-in;
+    cursor: pointer;
+}
+
+.menuItems a:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.menuBtn {
+    display: none;
+    width: 40px;
+    height: 40px;
+
+}
+
+@media screen and (max-width: 830px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        position: absolute;
+        right: 0;
+        margin-right: 10%;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 11px;
+        z-index: 3;
+    }
+
+    .menuBtn {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menuItems {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 13px;
+        border-radius: 10px;
+        background: rgb(0, green, 0);
+        background: linear-gradient(0deg, rgba(139, 132, 129, 0.453) 0%, rgb(24, 21, 22) 100%);
+        padding: 24px 33px;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+
+    }
+
+    .menuItems a {
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .menuItems a:hover {
+        color: #8F0404;
+        background-color: transparent;
+    }
+
+    .menuOpen {
+        display: flex;
+        z-index: 1;
+    }
+
+    .scrolled {
+        background-color: transparent;
+        /* Change to your desired background color */
+    }
+}

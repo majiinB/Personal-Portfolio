@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    margin-left: 0.01%;
+    margin-right: 0.01%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.contentInsideBox {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    opacity: 0;
+    border-radius: 26px;
+    background: rgba(54, 45, 43, 1);
+    gap: 5%;
+    padding: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
+    transform: translateY(0);
+    transition: max-height 0.6s ease, opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scrolledInsideBox {
+    max-height: 100%;
+    opacity: 1;
+    transform: translateY(-200px);
+}
+
+.textHolder {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    cursor: default;
+}
+
+.imageHolder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    padding-bottom: 3%;
+    justify-items: center;
+}
+
+.imageHolder img {
+    width: 50%;
+    padding: 1%;
+}
+
+.aboutMeBody {
+    color: #F9F9F7;
+    font-size: 18px;
+    font-family: 'Saira Condensed', 'roboto','inter';
+    font-weight: 400;
+    text-transform: capitalize;
+    word-wrap: break-word;
+}
+
+.aboutMeHeaderContainer {
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+}
+
+.headerAboutMe {
+    color: #F9F9F7;
+    font-size: 35px;
+    font-family: 'Saira Condensed', 'roboto';
+    font-weight: 700;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    margin-left: 10px;
+    /* Adjust margin as needed */
+}
+
+.aboutMeHeaderShape {
+    width: .5rem;
+    height: 2rem;
+    background: #C2B7AE;
+}

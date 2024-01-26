@@ -1,0 +1,121 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: #181516;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.emailAndPhoneContain {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerContain {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.contactMe {
+    color: #8F0404;
+    font-size: 18px;
+    font-family: Saira Condensed;
+    font-weight: 700;
+    text-transform: uppercase;
+    word-wrap: break-word
+}
+
+.through {
+    color: #FAF3F3;
+    font-size: 18px;
+    font-family: Saira Condensed;
+    font-weight: 700;
+    text-transform: uppercase;
+    word-wrap: break-word
+}
+
+.emailAndPhone {
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.emailContain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: flex-start;
+    padding: 1%;
+}
+
+.emailContain img {
+    padding-right: 5%;
+}
+
+.emailContain a h5 {
+    padding-left: 5%;
+    color: white;
+    font-size: 10px;
+    font-family: Inter;
+    font-weight: 200;
+    text-decoration: underline;
+    text-transform: lowercase;
+}
+
+.phoneContain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: flex-start;
+    padding: 1%;
+}
+
+.phoneContain img {
+    padding-right: 5%;
+}
+
+.phoneContain h5 {
+    padding-left: 5%;
+    color: white;
+    font-size: 10px;
+    font-family: Inter;
+    font-weight: 200;
+    text-transform: lowercase;
+    word-wrap: break-word
+}
+
+.socialsContain {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.socialsContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    /* Updated property */
+}
+
+.socialsContain img {
+    width: 5%;
+    margin-right: 5%;
+    cursor: pointer;
+}

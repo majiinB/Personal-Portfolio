@@ -1,0 +1,158 @@
+@import '../../vars.css';
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+/* Hero.module.css */
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    margin-left: 5.5%;
+    margin-right: 5.5%;
+    padding-top: 11%;
+    padding-bottom: 5%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title1 {
+    color: white;
+    font-size: 65px;
+    font-size: clamp(20px, 65px, 65px);
+    font-family: 'Saira Condensed', 'roboto';
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    cursor: default;
+}
+
+.title2 {
+    color: #8F0404;
+    font-size: 65px;
+    font-family: 'Saira Condensed', 'roboto';
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    cursor: default;
+}
+
+
+.heroImageContainer {
+    z-index: 1;
+    position: relative;
+}
+
+.heroImage {
+    width: 100%;
+}
+
+.buttonsContain {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20%;
+    padding-top: 2%;
+}
+
+.buttonGit {
+    font-weight: 600;
+    font-size: 18px;
+    color: #ffff;
+    background-color: #181516;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 50px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.buttonLinked {
+    font-weight: 600;
+    font-size: 18px;
+    color: #ffff;
+    background-color: #8F0404;
+    padding-right: 1.7em;
+    padding-left: 1.7rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 50px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.buttonLinked:hover {
+    transform: scale(1.1);
+}
+
+.buttonGit:hover {
+    transform: scale(1.1);
+}
+
+.hereoImage {
+    width: 100%;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .title1 {
+        font-size: clamp(40px, 3vw, 50px);
+        text-align: center;
+        transform: translateY(-120px);
+        z-index: 2;
+        text-shadow: 2px 2px 4px rgba(54, 42, 42, 0.5);
+    }
+
+    .title2 {
+        font-size: clamp(40px, 3vw, 50px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        /* Ensure the parent container has a height of 100% */
+        margin: 0;
+        width: 100%;
+        /* Remove any default margins */
+        transform: translateY(-120px);
+        z-index: 2;
+        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    }
+
+    .buttonsContain {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10%;
+        width: 100%;
+        transform: translateY(-120px);
+        z-index: 2;
+        text-shadow: 2px 2px 4px rgba(54, 42, 42, 0.5);
+    }
+
+    .heroImageContainer {
+        margin: auto;
+        z-index: -1;
+        position: relative;
+    }
+}
