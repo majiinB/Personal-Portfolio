@@ -23,7 +23,7 @@ export const Contact = () => {
                         <div className={styles.emailContain}>
                             <img src={getImageUrl("mail.png")} alt="" />
                             <a href="mailto:artuguearthur@gmail.com">
-                                <h5>artuguearthur@gmail.com</h5>
+                                <h5>arthurartugue392@gmail.com</h5>
                             </a>
                         </div>
                         <div className={styles.phoneContain}>
