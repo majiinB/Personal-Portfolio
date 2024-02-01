@@ -5,11 +5,15 @@ import { getImageUrl } from '../../utils'
 export const Contact = () => {
     const fbLink = 'https://www.facebook.com/profile.php?id=100008476154521';
     const gitLink = 'https://github.com/majiinB';
+    const linkedin = 'https://www.linkedin.com/in/arthur-artugue-6351162b2/';
     const handleClickFb = () => {
         window.location.href = fbLink;
     };
     const handleClickGit = () => {
         window.location.href = gitLink;
+    };
+    const handleClickLinked = () => {
+        window.location.href = linkedin;
     };
     return (
         <section className={styles.container} id='contact'>
@@ -35,7 +39,7 @@ export const Contact = () => {
                 <div className={styles.socialsContain}>
                     <div className={styles.socialsContent}>
                         <img src={getImageUrl("facebook-logo.png")} alt="" onClick={handleClickFb} />
-                        <img src={getImageUrl("linkedin-logo.png")} alt="" />
+                        <img src={getImageUrl("linkedin-logo.png")} alt="" onClick={handleClickLinked} />
                         <img src={getImageUrl("github-logo-white.png")} alt="" onClick={handleClickGit} />
                     </div>
                 </div>

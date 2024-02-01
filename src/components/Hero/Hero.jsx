@@ -23,7 +23,7 @@ export const Hero = () => {
                 <h1 className={styles.title1}>Hi I am Arthur M. Artugue an aspiring <br /></h1>
                 <h1 className={styles.title2}>Software Engineer</h1>
                 <div className={styles.buttonsContain}>
-                    <a className={styles.buttonLinked}>LinkedIn</a>
+                    <a href='https://www.linkedin.com/in/arthur-artugue-6351162b2/' className={styles.buttonLinked}>LinkedIn</a>
                     <a href='https://github.com/majiinB' className={styles.buttonGit}>GitHub</a>
                 </div>
             </div>

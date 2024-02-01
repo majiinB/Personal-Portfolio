@@ -92,6 +92,7 @@
     padding-bottom: 0.5rem;
     border-radius: 50px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
