@@ -21,6 +21,9 @@ import {
   SiIntellijidea,
   SiReact,
   SiVite,
+  SiOpenai,
+  SiGooglegemini,
+  SiLangchain,
 } from "react-icons/si";
 
 import {
@@ -59,6 +62,7 @@ const Skills: React.FC = () => {
         { name: "Express.js", icon: SiExpress },
         { name: "FastAPI", icon: SiFastapi },
         { name: "Flutter", icon: FaFlutter },
+        { name: "LangChain", icon: SiLangchain },
         { name: "Next.Js", icon: SiNextdotjs },
         { name: "Spring", icon: SiSpring },
         { name: "Vite", icon: SiVite },
@@ -91,9 +95,11 @@ const Skills: React.FC = () => {
       skills: [
         { name: "Android Studio", icon: SiAndroidstudio },
         { name: "Figma", icon: FaFigma },
+        { name: "Gemini API", icon: SiGooglegemini },
         { name: "Git", icon: FaGit },
         { name: "GitHub", icon: FaGithub },
         { name: "IntelliJ", icon: SiIntellijidea },
+        { name: "OpenAI API", icon: SiOpenai },
         { name: "PostMan", icon: SiPostman },
         { name: "PyCharm", icon: SiPycharm },
         { name: "VS Code", icon: TbBrandVscode },
