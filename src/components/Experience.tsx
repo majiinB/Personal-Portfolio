@@ -3,43 +3,61 @@ import { Calendar, MapPin, ExternalLink } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Software Development Intern",
-      company: "Tech Solutions Inc.",
+      title: "Backend Developer & API Integrator (School Project)",
+      company: "Odyssey",
       location: "Remote",
-      period: "June 2024 - Present",
+      period: "February 2025 - May 2025",
       description: [
-        "Developed and maintained web applications using React and Node.js",
-        "Collaborated with cross-functional teams to deliver high-quality software solutions",
-        "Implemented responsive UI components and optimized application performance",
-        "Participated in code reviews and followed agile development methodologies",
+        "Designed and implemented the backend architecture and database schema for Deck, a productivity app that helps students review through AI-powered flashcards and task management.",
+        "Developed a RESTful API using Node.js and Express, handling user authentication, flashcard management, task tracking, AI-based flashcard generation, AI-based quiz generation and AI-based content moderation endpoints.",
+        "Integrated AI services for generating flashcards and quizzes based on user-provided topics and materials (PDF).",
+        "Designed and managed the Firebase Firestore database structure for secure and efficient data storage.",
+        "Collaborated with the mobile development team (Flutter) to integrate backend services into the app, handling API consumption, data fetching, and error management.",
+        "Implemented secure authentication and authorization using OAuth 2.0 and JWT tokens.",
       ],
-      technologies: ["React", "Node.js", "MongoDB", "Express", "TypeScript"],
+      technologies: [
+        "Node.js",
+        "Express",
+        "Firebase",
+        "TypeScript",
+        "JWT",
+        "OAuth 2.0",
+        "Gemini API",
+        "Flutter",
+      ],
     },
     {
-      title: "Teaching Assistant",
-      company: "University Computer Science Department",
-      location: "On Campus",
-      period: "September 2023 - May 2024",
+      title: "Graphic Design Team Leader (Commissioned Project)",
+      company: "Aral",
+      location: "Remote",
+      period: "December 2024 - January 2025",
       description: [
-        "Assisted students in understanding fundamental programming concepts",
-        "Conducted lab sessions for introductory computer science courses",
-        "Graded assignments and provided constructive feedback to students",
-        "Helped develop course materials and programming exercises",
+        "Led a commissioned project focused on the graphic design and document layout of academic reviewers to improve content readability and presentation.",
+        "Communicated directly with the client to gather project requirements, clarify expectations, and address feedback promptly.",
+        "Coordinated and supervised a team of designers, ensuring that deliverables met quality standards and client specifications.",
+        "Managed project timelines and ensured timely delivery of professionally designed and formatted documents.",
+        "Provided revisions based on client feedback and delivered final materials in high-quality PDF format.",
       ],
-      technologies: ["Python", "Java", "Data Structures", "Algorithms"],
+      technologies: ["Discord", "Google Docs", "Google Sheets"],
     },
     {
-      title: "Freelance Web Developer",
-      company: "Self-Employed",
+      title: "Backend Developer (Commissioned Project)",
+      company: "Aqua Fresco Beach Resort",
       location: "Remote",
-      period: "January 2023 - August 2023",
+      period: "June 2024 - July 2024",
       description: [
-        "Built custom websites and web applications for small businesses",
-        "Worked directly with clients to understand requirements and deliver solutions",
-        "Implemented responsive designs and ensured cross-browser compatibility",
-        "Provided ongoing maintenance and technical support",
+        "Developed and implemented the backend services for the Aqua Fresco Beach Resort website, including room booking management and transaction processing.",
+        "Built RESTful APIs using Express.js for handling room availability, reservation requests, and transaction records.",
+        "Integrated PayMongo API for secure online payment processing within the booking system.",
+        "Designed and structured the Firebase Firestore database for efficient data management of bookings, payments, and user information.",
+        "Provided backend documentation for production use.",
       ],
-      technologies: ["HTML5", "CSS3", "JavaScript", "WordPress", "PHP"],
+      technologies: [
+        "Express.js",
+        "Node.js",
+        "Firebase Firestore",
+        "PayMongo API",
+      ],
     },
   ];
 
@@ -50,8 +68,7 @@ const Experience = () => {
           <h2 className="text-4xl font-bold text-[#023047] mb-4">Experience</h2>
           <div className="w-20 h-1 bg-[#219EBC] mx-auto mb-6"></div>
           <p className="text-[#8E9AAF] text-lg max-w-2xl mx-auto">
-            My professional journey and hands-on experience in software
-            development
+            My journey and hands-on experience in software development
           </p>
         </div>
 
