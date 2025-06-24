@@ -1,11 +1,12 @@
-import { Calendar, MapPin, ExternalLink } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
+import { GoOrganization } from "react-icons/go";
 
 const Experience = () => {
   const experiences = [
     {
       title: "Backend Developer & API Integrator (Academic Project)",
       company: "Odyssey",
-      location: "On-site/Remote",
+      location: "On-site / Remote",
       period: "February 2025 - May 2025",
       description: [
         "Designed and implemented the backend architecture and database schema for Deck, a productivity app that helps students review through AI-powered flashcards and task management.",
@@ -60,9 +61,30 @@ const Experience = () => {
       ],
     },
     {
+      title: "Business Analyst & QA Tester (Academic Project)",
+      company: "Odyssey",
+      location: "On-site / Remote",
+      period: "March 2024 - May 2024",
+      description: [
+        "Defined the initial concept and narrative direction for 'Through The Woods', a third-person adventure game focusing on character growth and resilience.",
+        "Collaborated closely with the team to decide on core gameplay mechanics, level progression, and user experience (UX) flow.",
+        "Created comprehensive documentation, including business requirements, user stories, and design rationale to guide the development process.",
+        "Designed detailed test plans, use cases, and conducted iterative playtesting sessions to identify and report bugs, gameplay issues, and UX improvement opportunities.",
+        "Facilitated team coordination through ClickUp and Discord, ensuring efficient communication, task management, and milestone tracking throughout the academic project.",
+      ],
+      technologies: [
+        "Unity",
+        "C#",
+        "ClickUp",
+        "Discord",
+        "Google Docs",
+        "Google Sheets",
+      ],
+    },
+    {
       title: "Backend Developer (Academic Projects)",
       company: "Krusty Krab Krew & Odyssey",
-      location: "On-site/Remote",
+      location: "On-site / Remote",
       period: "May 2023 - August 2023 | November 2023 - January 2024",
       description: [
         "Developed and integrated backend logic for two desktop-based Library Management Systems using C# and Java, in collaboration with two different project teams.",
@@ -103,7 +125,7 @@ const Experience = () => {
                         {experience.title}
                       </h3>
                       <div className="flex items-center text-[#219EBC] font-medium mb-2">
-                        <ExternalLink size={16} className="mr-2" />
+                        <GoOrganization size={16} className="mr-2" />
                         {experience.company}
                       </div>
                     </div>
