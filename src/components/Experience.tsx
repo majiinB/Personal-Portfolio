@@ -3,9 +3,9 @@ import { Calendar, MapPin, ExternalLink } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Backend Developer & API Integrator (School Project)",
+      title: "Backend Developer & API Integrator (Academic Project)",
       company: "Odyssey",
-      location: "Remote",
+      location: "On-site/Remote",
       period: "February 2025 - May 2025",
       description: [
         "Designed and implemented the backend architecture and database schema for Deck, a productivity app that helps students review through AI-powered flashcards and task management.",
@@ -58,6 +58,20 @@ const Experience = () => {
         "Firebase Firestore",
         "PayMongo API",
       ],
+    },
+    {
+      title: "Backend Developer (Academic Projects)",
+      company: "Krusty Krab Krew & Odyssey",
+      location: "On-site/Remote",
+      period: "May 2023 - August 2023 | November 2023 - January 2024",
+      description: [
+        "Developed and integrated backend logic for two desktop-based Library Management Systems using C# and Java, in collaboration with two different project teams.",
+        "Implemented core functionalities including book inventory management, member registration, borrowing and returning processes, and transaction tracking.",
+        "Handled database integration and query operations using XAMPP with MariaDB for both applications.",
+        "Collaborated with the UX team to determine user interaction flows and feature accessibility within the application.",
+        "Participated in debugging, optimization, and testing phases to ensure system reliability and consistency.",
+      ],
+      technologies: ["C#", "Java", "XAMPP", "MariaDB"],
     },
   ];
 
