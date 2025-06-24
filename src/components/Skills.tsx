@@ -24,6 +24,7 @@ import {
   SiOpenai,
   SiGooglegemini,
   SiLangchain,
+  SiXampp,
 } from "react-icons/si";
 
 import {
@@ -104,6 +105,7 @@ const Skills: React.FC = () => {
         { name: "PyCharm", icon: SiPycharm },
         { name: "VS Code", icon: TbBrandVscode },
         { name: "Visual Studio", icon: TbBrandVisualStudio },
+        { name: "Xampp", icon: SiXampp },
       ],
     },
   ];
