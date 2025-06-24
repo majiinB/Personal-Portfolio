@@ -64,7 +64,7 @@ const Experience = () => {
       title: "Business Analyst & QA Tester (Academic Project)",
       company: "Odyssey",
       location: "On-site / Remote",
-      period: "March 2024 - May 2024",
+      period: "October 2024 - December 2024",
       description: [
         "Defined the initial concept and narrative direction for 'Through The Woods', a third-person adventure game focusing on character growth and resilience.",
         "Collaborated closely with the team to decide on core gameplay mechanics, level progression, and user experience (UX) flow.",
