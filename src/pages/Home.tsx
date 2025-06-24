@@ -8,6 +8,7 @@ import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import Experience from "../components/Experience";
+import Certifications from "../components/Certifications";
 
 const Home: React.FC = () => {
   return (
@@ -24,6 +25,10 @@ const Home: React.FC = () => {
 
       <Element name="skills">
         <Skills />
+      </Element>
+
+      <Element name="certifications">
+        <Certifications />
       </Element>
 
       <Element name="experience">

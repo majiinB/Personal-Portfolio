@@ -15,12 +15,12 @@ const Header: React.FC = () => {
           <Link to="/" className="flex items-center space-x-2 group">
             <Server className="h-8 w-8 text-primary group-hover:text-soft-highlight transition-colors duration-300" />
             <span className="text-white font-mono text-xl font-bold">
-              arthur's.portfolio
+              arthur.dev
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-8">
             <ScrollLink
               to="hero"
               smooth={true}
@@ -46,6 +46,14 @@ const Header: React.FC = () => {
               ~/skills
             </ScrollLink>
             <ScrollLink
+              to="certifications"
+              smooth={true}
+              duration={500}
+              className="text-white hover:text-primary transition-colors duration-300 font-mono cursor-pointer"
+            >
+              ~/certifications
+            </ScrollLink>
+            <ScrollLink
               to="projects"
               smooth={true}
               duration={500}
@@ -66,7 +74,7 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-white hover:text-primary transition-colors duration-300"
+            className="lg:hidden text-white hover:text-primary transition-colors duration-300"
           >
             {isMenuOpen ? (
               <X className="h-6 w-6" />
@@ -78,7 +86,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-primary/20">
+          <nav className="lg:hidden mt-4 pb-4 border-t border-primary/20">
             <div className="flex flex-col space-y-4 pt-4">
               <ScrollLink
                 to="hero"
@@ -106,6 +114,14 @@ const Header: React.FC = () => {
                 className="text-white hover:text-primary transition-colors duration-300 font-mono cursor-pointer"
               >
                 ~/skills
+              </ScrollLink>
+              <ScrollLink
+                to="certifications"
+                smooth={true}
+                duration={500}
+                className="text-white hover:text-primary transition-colors duration-300 font-mono cursor-pointer"
+              >
+                ~/certifications
               </ScrollLink>
               <ScrollLink
                 to="projects"

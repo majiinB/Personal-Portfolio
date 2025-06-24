@@ -9,8 +9,8 @@ import {
   Download,
   Github,
   Linkedin,
-  Mail,
   Bot,
+  Facebook,
 } from "lucide-react";
 
 const Hero: React.FC = () => {
@@ -165,31 +165,36 @@ const Hero: React.FC = () => {
 
             <div className="flex space-x-4">
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-delay-3">
-                <button className="bg-[#219EBC] hover:bg-[#1a7a94] text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                <a
+                  href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#219EBC] hover:bg-[#1a7a94] text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                >
                   <Download size={20} />
                   <span>Download Resume</span>
-                </button>
+                </a>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://github.com/majiinB"
                     className="w-12 h-12 bg-white hover:bg-[#219EBC] text-[#8E9AAF] hover:text-white rounded-lg flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
                     aria-label="GitHub"
                   >
                     <Github size={24} />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/arthur-artugue-6351162b2/"
                     className="w-12 h-12 bg-white hover:bg-[#219EBC] text-[#8E9AAF] hover:text-white rounded-lg flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
                     aria-label="LinkedIn"
                   >
                     <Linkedin size={24} />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.facebook.com/profile.php?id=100008476154521"
                     className="w-12 h-12 bg-white hover:bg-[#219EBC] text-[#8E9AAF] hover:text-white rounded-lg flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
-                    aria-label="Email"
+                    aria-label="Facebook"
                   >
-                    <Mail size={24} />
+                    <Facebook size={24} />
                   </a>
                 </div>
               </div>
