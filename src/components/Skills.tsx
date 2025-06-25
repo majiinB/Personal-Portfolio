@@ -1,5 +1,5 @@
 import React, { ComponentType } from "react";
-import { otherTech, skillCategories } from "../data/portfolioData";
+import { otherTech, skillCategories } from "../data/skillsData";
 
 const Skills: React.FC = () => {
   type DynamicIconProps = {

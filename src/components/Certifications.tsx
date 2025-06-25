@@ -1,43 +1,8 @@
 import React from "react";
 import { ExternalLink, Award } from "lucide-react";
+import { certifications, categories } from "../data/certificationsData";
 
 const Certifications = () => {
-  const certifications = [
-    {
-      id: "ml-basics",
-      title: "Machine Learning Basics",
-      issuer: "Coursera",
-      date: "April 2024",
-      category: "AI & ML",
-      image:
-        "https://images.pexels.com/photos/8294559/pexels-photo-8294559.jpeg?auto=compress&cs=tinysrgb&w=800",
-      certificateLink: "#",
-    },
-    {
-      id: "python-fundamentals",
-      title: "Python Fundamentals",
-      issuer: "freeCodeCamp",
-      date: "March 2024",
-      category: "Programming",
-      image:
-        "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
-      certificateLink: "#",
-    },
-    {
-      id: "aws-cloud",
-      title: "AWS Cloud Practitioner Essentials",
-      issuer: "AWS Training",
-      date: "February 2024",
-      category: "Cloud",
-      image:
-        "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=800",
-      certificateLink: "#",
-    },
-    // Add more certificates here
-  ];
-
-  const categories = ["All", "AI & ML", "Programming", "Cloud"];
-
   const [activeCategory, setActiveCategory] = React.useState("All");
 
   const filteredCertifications =
@@ -84,11 +49,14 @@ const Certifications = () => {
               className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
             >
               <div className="relative overflow-hidden">
-                <img
-                  src={cert.image}
-                  alt={cert.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                />
+                <div className="relative w-full aspect-video overflow-hidden rounded-lg">
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
                 <div className="absolute top-4 left-4 bg-[#219EBC] p-2 rounded-lg">
                   <Award size={20} color="white" />
                 </div>
