@@ -37,7 +37,7 @@ export const certifications = [
     issuer: "University of Makati",
     date: "October 2024",
     category: "Academic Recognitions",
-    image: "src/public/certificates/UMAK/INFOTECH-ANDROID-APP-DEV.jpg",
+    image: "/certificates/UMAK/INFOTECH-ANDROID-APP-DEV.jpg",
     certificateLink: "/certificates/UMAK/INFOTECH-ANDROID-APP-DEV.jpg",
   },
   {
