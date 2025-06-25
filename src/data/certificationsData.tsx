@@ -5,9 +5,9 @@ export const certifications = [
     issuer: "Department of Information and Communications Technology",
     date: "March 2024",
     category: "Software Engineering",
-    image: "\\certificates\\DICT\\SOFTWARE_ENGINEERING-ADVANCED_page-0001.jpg",
+    image: "/certificates/DICT/SOFTWARE_ENGINEERING-ADVANCED_page-0001.jpg",
     certificateLink:
-      "\\certificates\\DICT\\SOFTWARE_ENGINEERING-ADVANCED_page-0001.jpg",
+      "/certificates/DICT/SOFTWARE_ENGINEERING-ADVANCED_page-0001.jpg",
   },
   {
     id: "dict-android-app-using-firebase",
@@ -16,9 +16,9 @@ export const certifications = [
     date: "June 2024",
     category: "Mobile Development",
     image:
-      "\\certificates\\DICT\\ANDROID_APP_DEV-USING_FIREBASE_AS_AN_APPLICATION_BACKEND_page-0001.jpg",
+      "/certificates/DICT/ANDROID_APP_DEV-USING_FIREBASE_AS_AN_APPLICATION_BACKEND_page-0001.jpg",
     certificateLink:
-      "\\certificates\\DICT\\ANDROID_APP_DEV-USING_FIREBASE_AS_AN_APPLICATION_BACKEND_page-0001.jpg",
+      "/certificates/DICT/ANDROID_APP_DEV-USING_FIREBASE_AS_AN_APPLICATION_BACKEND_page-0001.jpg",
   },
   {
     id: "dict-cloud-computing-adv",
@@ -27,9 +27,9 @@ export const certifications = [
     date: "August 2024",
     category: "Cloud & Infrastructure",
     image:
-      "\\certificates\\DICT\\CLOUD_COMPUTING-ADVANCED_LEVEL_OF_CLOUD_COMPUTING_page-0001.jpg",
+      "/certificates/DICT/CLOUD_COMPUTING-ADVANCED_LEVEL_OF_CLOUD_COMPUTING_page-0001.jpg",
     certificateLink:
-      "\\certificates\\DICT\\CLOUD_COMPUTING-ADVANCED_LEVEL_OF_CLOUD_COMPUTING_page-0001.jpg",
+      "/certificates/DICT/CLOUD_COMPUTING-ADVANCED_LEVEL_OF_CLOUD_COMPUTING_page-0001.jpg",
   },
   {
     id: "infotech-android-app",
@@ -37,8 +37,8 @@ export const certifications = [
     issuer: "University of Makati",
     date: "October 2024",
     category: "Academic Recognitions",
-    image: "src\\public\\certificates\\UMAK\\INFOTECH-ANDROID-APP-DEV.jpg",
-    certificateLink: "\\certificates\\UMAK\\INFOTECH-ANDROID-APP-DEV.jpg",
+    image: "src/public/certificates/UMAK/INFOTECH-ANDROID-APP-DEV.jpg",
+    certificateLink: "/certificates/UMAK/INFOTECH-ANDROID-APP-DEV.jpg",
   },
   {
     id: "infotech-net-programming",
@@ -46,8 +46,8 @@ export const certifications = [
     issuer: "University of Makati",
     date: "November 2024",
     category: "Academic Recognitions",
-    image: "\\certificates\\UMAK\\INFOTECH-NET-PROGRAMMING.jpg",
-    certificateLink: "\\certificates\\UMAK\\INFOTECH-NET-PROGRAMMING.jpg",
+    image: "/certificates/UMAK/INFOTECH-NET-PROGRAMMING.jpg",
+    certificateLink: "/certificates/UMAK/INFOTECH-NET-PROGRAMMING.jpg",
   },
   {
     id: "panelist-cert-umak",
@@ -55,8 +55,8 @@ export const certifications = [
     issuer: "University of Makati",
     date: "June 2024",
     category: "Academic Recognitions",
-    image: "\\certificates\\UMAK\\PANELIST-CERT-FROM-DEAN.jpg",
-    certificateLink: "\\certificates\\UMAK\\PANELIST-CERT-FROM-DEAN.jpg",
+    image: "/certificates/UMAK/PANELIST-CERT-FROM-DEAN.jpg",
+    certificateLink: "/certificates/UMAK/PANELIST-CERT-FROM-DEAN.jpg",
   },
   {
     id: "panelist-cert-section",
@@ -64,8 +64,8 @@ export const certifications = [
     issuer: "University of Makati (DCSAD)",
     date: "June 2024",
     category: "Academic Recognitions",
-    image: "\\certificates\\UMAK\\PANELIST-CERT-FROM-SECTION.jpg",
-    certificateLink: "\\certificates\\UMAK\\PANELIST-CERT-FROM-SECTION.jpg",
+    image: "/certificates/UMAK/PANELIST-CERT-FROM-SECTION.jpg",
+    certificateLink: "/certificates/UMAK/PANELIST-CERT-FROM-SECTION.jpg",
   },
 ];
 
