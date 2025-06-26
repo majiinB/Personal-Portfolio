@@ -43,7 +43,7 @@ export const projects: { [key: string]: Project } = {
   "deck-v2": {
     title: "Deck",
     overview:
-      "Deck is a productivity application designed to enhance your learning and task management experience. With Deck, you can create custom flashcards, generate flashcards automatically using Gemini AI 🤖, and efficiently manage your tasks. It's the perfect tool for students, professionals, and anyone looking to boost their productivity.",
+      "Deck is a productivity application designed to enhance your learning and task management experience. With Deck, you can create custom flashcards, generate flashcards automatically using Gemini AI, and efficiently manage your tasks. It's the perfect tool for students, professionals, and anyone looking to boost their productivity.",
     githubUrl: "https://github.com/majiinB/Deck-V2.git",
     description:
       "Deck is a productivity application designed to enhance your learning and task management experience.",
