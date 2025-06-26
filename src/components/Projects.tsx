@@ -37,7 +37,7 @@ const Projects = () => {
               onClick={() => setActiveCategory(category)}
               className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                 activeCategory === category
-                  ? "bg-[#219EBC] text-white shadow-lg"
+                  ? "bg-primary text-white shadow-lg"
                   : "bg-white text-[#8E9AAF] hover:bg-[#219EBC] hover:text-white shadow-md"
               }`}
             >
@@ -100,19 +100,21 @@ const Projects = () => {
                     </span>
                     <div className="flex space-x-3">
                       <a
-                        href={project.github}
+                        href={project.githubUrl}
                         className="text-[#8E9AAF] hover:text-[#219EBC] transition-colors duration-200"
                         aria-label="View on GitHub"
                       >
                         <Github size={20} />
                       </a>
-                      <a
-                        href={project.demo}
-                        className="text-[#8E9AAF] hover:text-[#219EBC] transition-colors duration-200"
-                        aria-label="View live demo"
-                      >
-                        <ExternalLink size={20} />
-                      </a>
+                      {project.demo !== "#" && (
+                        <a
+                          href={project.demo}
+                          className="text-[#8E9AAF] hover:text-[#219EBC] transition-colors duration-200"
+                          aria-label="View live demo"
+                        >
+                          <ExternalLink size={20} />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

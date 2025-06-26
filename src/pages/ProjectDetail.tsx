@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect } from "react";
+import React, { ComponentType, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   ArrowLeft,
@@ -14,6 +14,18 @@ const ProjectDetail: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  type DynamicIconProps = {
+    icon: ComponentType<{ className?: string }>;
+    className?: string;
+  };
+
+  const DynamicIcon: React.FC<DynamicIconProps> = ({
+    icon: IconBase,
+    className,
+  }) => {
+    return <IconBase className={className} />;
+  };
 
   const { id } = useParams<{ id: string }>();
 
@@ -84,12 +96,12 @@ const ProjectDetail: React.FC = () => {
             {project.images.map((image: string, index: number) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-2 border-[#FFB703]"
               >
                 <img
                   src={image}
                   alt={`${project.title} screenshot ${index + 1}`}
-                  className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-64 object-contain transition-transform duration-300 hover:scale-105"
                 />
               </div>
             ))}
@@ -107,9 +119,14 @@ const ProjectDetail: React.FC = () => {
                 key={index}
                 className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-primary"
               >
-                <h3 className="text-xl font-semibold text-dark-accent mb-3">
-                  {tech.name}
+                <h3 className="text-xl font-semibold text-dark-accent mb-3 flex items-center space-x-2">
+                  <DynamicIcon
+                    icon={tech.icon as ComponentType<{ className?: string }>}
+                    className="text-primary text-3xl"
+                  />
+                  <span> | {tech.name}</span>
                 </h3>
+
                 <p className="text-subtle-text leading-relaxed">
                   {tech.reason}
                 </p>
@@ -164,12 +181,15 @@ const ProjectDetail: React.FC = () => {
           <div className="bg-dark-accent rounded-xl p-8">
             <h3 className="text-2xl font-semibold text-white mb-6 flex items-center space-x-2">
               <Database className="h-6 w-6 text-primary" />
-              <span>Database Schema</span>
+              <span>ERD Diagram</span>
             </h3>
-            <div className="bg-gray-900 rounded-lg p-6 font-mono text-sm overflow-x-auto">
-              <pre className="text-green-400 whitespace-pre-wrap">
-                {project.architecture.database.schema}
-              </pre>
+
+            <div className="bg-gray-900 rounded-lg p-6 overflow-x-auto">
+              <img
+                src={project.architecture.database.schemaImage}
+                alt={`${project.title} ERD diagram`}
+                className="w-full h-auto rounded-lg"
+              />
             </div>
           </div>
         </section>

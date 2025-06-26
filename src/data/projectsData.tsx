@@ -1,9 +1,20 @@
-import { Code, LucideIcon } from "lucide-react";
+import { LucideIcon } from "lucide-react";
+import { IconType } from "react-icons";
+import { BiMobile } from "react-icons/bi";
+import { DiDart, DiNodejs } from "react-icons/di";
+import {
+  SiExpress,
+  SiFirebase,
+  SiFlutter,
+  SiGooglegemini,
+  SiTypescript,
+  SiZod,
+} from "react-icons/si";
 
 interface Architecture {
   description: string;
   components: { name: string; description: string }[];
-  database: { schema: string };
+  database: { schemaImage: string };
 }
 
 interface Project {
@@ -13,134 +24,120 @@ interface Project {
   description: string;
   cover_image: string;
   images: string[];
-  technologies: { name: string; reason: string }[];
+  technologies: { name: string; reason: string; icon: IconType | LucideIcon }[];
   architecture: Architecture;
-  github: string;
   demo: string;
   category: string;
-  icon: LucideIcon;
+  icon: LucideIcon | IconType;
 }
 
 export const categories = [
   "All",
   "Full-Stack",
+  "APIs",
   "Web App",
-  "Data Science",
-  "Machine Learning",
-  "Mobile",
+  "Mobile App",
 ];
 
 export const projects: { [key: string]: Project } = {
-  "ecommerce-api": {
-    title: "E-Commerce Platform",
+  "deck-v2": {
+    title: "Deck",
     overview:
-      "A comprehensive REST API platform built for modern e-commerce operations. This project implements a microservices architecture with advanced features like real-time inventory management, payment processing, order tracking, and user authentication. The system is designed to handle high traffic loads while maintaining data consistency and security.",
-    githubUrl: "https://github.com/yourusername/ecommerce-api",
+      "Deck is a productivity application designed to enhance your learning and task management experience. With Deck, you can create custom flashcards, generate flashcards automatically using Gemini AI 🤖, and efficiently manage your tasks. It's the perfect tool for students, professionals, and anyone looking to boost their productivity.",
+    githubUrl: "https://github.com/majiinB/Deck-V2.git",
     description:
-      "A full-stack e-commerce solution with user authentication, payment integration, and admin dashboard. Built with React, Node.js, and MongoDB.",
-    cover_image:
-      "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "Deck is a productivity application designed to enhance your learning and task management experience.",
+    cover_image: "/projects/deck-v2/deck-cover-photo.jpg",
     images: [
-      "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
-      "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg",
-      "https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg",
+      "/projects/deck-v2/deck-intro.jpg",
+      "/projects/deck-v2/deck-home.jpg",
+      "/projects/deck-v2/deck-task-folder.jpg",
+      "/projects/deck-v2/deck-add-deck.jpg",
+      "/projects/deck-v2/deck-view-deck.jpg",
+      "/projects/deck-v2/deck-study.jpg",
+      "/projects/deck-v2/deck-quiz.jpg",
     ],
     technologies: [
       {
         name: "Node.js",
         reason:
           "Chosen for its excellent performance in I/O operations and extensive ecosystem of packages suitable for building scalable APIs.",
+        icon: DiNodejs,
       },
       {
         name: "Express.js",
         reason:
           "Lightweight and flexible web framework that provides robust features for web and mobile applications with minimal overhead.",
+        icon: SiExpress,
       },
       {
-        name: "PostgreSQL",
+        name: "Firebase",
         reason:
-          "ACID-compliant relational database perfect for handling complex e-commerce transactions and maintaining data integrity.",
+          "Integrated to handle user authentication, cloud database, and backend services efficiently, allowing for real-time data sync and secure user management.",
+        icon: SiFirebase,
       },
       {
-        name: "Redis",
+        name: "Flutter",
         reason:
-          "In-memory data structure store used for caching frequently accessed data and session management to improve performance.",
+          "Chosen for its ability to build fast, cross-platform mobile applications using a single codebase, providing a native-like performance and rich UI capabilities.",
+        icon: SiFlutter,
       },
       {
-        name: "Docker",
+        name: "TypeScript",
         reason:
-          "Containerization ensures consistent deployment across different environments and simplifies scaling and maintenance.",
+          "Adds static typing to JavaScript, improving code quality, maintainability, and reducing runtime errors through type safety.",
+        icon: SiTypescript,
+      },
+      {
+        name: "Dart",
+        reason:
+          "Used as the primary programming language for Flutter, offering expressive syntax and ahead-of-time (AOT) compilation to deliver high-performance apps.",
+        icon: DiDart,
+      },
+      {
+        name: "Google Gemini API",
+        reason:
+          "Implemented to enable AI-powered flashcard generation directly within the mobile app, giving users the ability to generate study materials based on input topics or uploaded documents.",
+        icon: SiGooglegemini,
+      },
+      {
+        name: "Zod",
+        reason:
+          "Used for schema-based validation in the API, offering a simple, type-safe, and highly maintainable way to validate incoming requests.",
+        icon: SiZod,
       },
     ],
     architecture: {
       description:
-        "The application follows a microservices architecture pattern with clear separation of concerns. Each service is responsible for specific business logic and communicates through REST APIs and message queues.",
+        "The application follows a microservices architecture pattern with clear separation of concerns. Each service is responsible for specific business logic and communicates through REST and RPC APIs.",
       components: [
         {
-          name: "API Gateway",
+          name: "User Management Service",
           description:
-            "Entry point for all client requests, handles routing, authentication, and rate limiting",
+            "Handles user authentication, registration, role management, and profile-related operations using Firebase Authentication and Firestore.",
         },
         {
-          name: "User Service",
+          name: "Task Management Service",
           description:
-            "Manages user authentication, registration, and profile management",
+            "Manages user-created to-do tasks, including task creation, updating, completion status, and deletion, allowing users to track and organize their activities.",
         },
         {
-          name: "Product Service",
+          name: "Deck Management Service",
           description:
-            "Handles product catalog, inventory management, and search functionality",
+            "Handles creation, updating, retrieval, and deletion of decks and flashcards, as well retrieving the quizzes for the given deck of flashcards.",
         },
         {
-          name: "Order Service",
+          name: "AI Service",
           description:
-            "Processes orders, manages cart operations, and handles order tracking",
-        },
-        {
-          name: "Payment Service",
-          description:
-            "Integrates with payment providers and handles transaction processing",
+            "Integrates with Google Gemini API to generate AI-powered flashcards based on provided topics, descriptions, or uploaded study materials. As well as quizzes based on the contents of a deck. In addition, it is responsible for moderating generated flashcard content, ensuring it is appropriate, accurate, and free from harmful or false information before presenting it to users.",
         },
       ],
       database: {
-        schema: `
--- Users table
-CREATE TABLE users (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    email VARCHAR(255) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    first_name VARCHAR(100),
-    last_name VARCHAR(100),
-    created_at TIMESTAMP DEFAULT NOW(),
-    updated_at TIMESTAMP DEFAULT NOW()
-);
-
--- Products table
-CREATE TABLE products (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    name VARCHAR(255) NOT NULL,
-    description TEXT,
-    price DECIMAL(10,2) NOT NULL,
-    stock_quantity INTEGER DEFAULT 0,
-    category_id UUID REFERENCES categories(id),
-    created_at TIMESTAMP DEFAULT NOW(),
-    updated_at TIMESTAMP DEFAULT NOW()
-);
-
--- Orders table
-CREATE TABLE orders (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    user_id UUID REFERENCES users(id),
-    total_amount DECIMAL(10,2) NOT NULL,
-    status VARCHAR(50) DEFAULT 'pending',
-    created_at TIMESTAMP DEFAULT NOW(),
-    updated_at TIMESTAMP DEFAULT NOW()
-);`,
+        schemaImage: "/projects/deck-v2/deck-erd-diagram.jpg",
       },
     },
-    github: "#",
     demo: "#",
-    category: "Full-Stack",
-    icon: Code,
+    category: "Mobile App",
+    icon: BiMobile,
   },
 };
