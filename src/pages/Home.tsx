@@ -17,9 +17,9 @@ const Home: React.FC = () => {
   useEffect(() => {
     if (hash) {
       scroller.scrollTo(hash.replace("#", ""), {
-        duration: 500,
-        delay: 0,
-        smooth: "easeInOutQuart",
+        // duration: 500,
+        // delay: 0,
+        // smooth: "easeInOutQuart",
         // offset: -70, // adjust for sticky header height if you have one
       });
     }
