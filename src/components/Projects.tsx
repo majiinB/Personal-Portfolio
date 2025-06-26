@@ -1,103 +1,19 @@
 import React from "react";
-import { Github, ExternalLink, Code, Smartphone, Database } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import { categories, projects } from "../data/projectsData";
 
 const Projects = () => {
-  const projects = [
-    {
-      id: "ecommerce-api",
-      title: "E-Commerce Platform",
-      description:
-        "A full-stack e-commerce solution with user authentication, payment integration, and admin dashboard. Built with React, Node.js, and MongoDB.",
-      image:
-        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "JWT"],
-      github: "#",
-      demo: "#",
-      category: "Full-Stack",
-      icon: Code,
-    },
-    {
-      id: "ecommerce-api",
-      title: "Task Management App",
-      description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image:
-        "https://images.pexels.com/photos/7376/startup-photos.jpg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Firebase", "Tailwind CSS", "Zustand"],
-      github: "#",
-      demo: "#",
-      category: "Web App",
-      icon: Smartphone,
-    },
-    {
-      id: "ecommerce-api",
-      title: "Weather Analytics Dashboard",
-      description:
-        "A data visualization dashboard that displays weather analytics with interactive charts and real-time weather data from multiple APIs.",
-      image:
-        "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Python", "Django", "Chart.js", "OpenWeather API"],
-      github: "#",
-      demo: "#",
-      category: "Data Science",
-      icon: Database,
-    },
-    {
-      id: "ecommerce-api",
-      title: "Machine Learning Model",
-      description:
-        "A predictive model for stock price analysis using machine learning algorithms with data preprocessing and visualization components.",
-      image:
-        "https://images.pexels.com/photos/7947664/pexels-photo-7947664.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Python", "TensorFlow", "Pandas", "Matplotlib"],
-      github: "#",
-      demo: "#",
-      category: "Machine Learning",
-      icon: Database,
-    },
-    {
-      id: "ecommerce-api",
-      title: "Social Media Dashboard",
-      description:
-        "A comprehensive social media management dashboard with analytics, post scheduling, and multi-platform integration.",
-      image:
-        "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Vue.js", "Express", "PostgreSQL", "Chart.js"],
-      github: "#",
-      demo: "#",
-      category: "Full-Stack",
-      icon: Code,
-    },
-    {
-      id: "ecommerce-api",
-      title: "Mobile Fitness Tracker",
-      description:
-        "A React Native mobile application for fitness tracking with workout planning, progress monitoring, and social features.",
-      image:
-        "https://images.pexels.com/photos/4753986/pexels-photo-4753986.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React Native", "Firebase", "Redux", "Expo"],
-      github: "#",
-      demo: "#",
-      category: "Mobile",
-      icon: Smartphone,
-    },
-  ];
-
-  const categories = [
-    "All",
-    "Full-Stack",
-    "Web App",
-    "Data Science",
-    "Machine Learning",
-    "Mobile",
-  ];
   const [activeCategory, setActiveCategory] = React.useState("All");
 
   const filteredProjects =
     activeCategory === "All"
       ? projects
-      : projects.filter((project) => project.category === activeCategory);
+      : Object.fromEntries(
+          Object.entries(projects).filter(
+            ([, project]) => project.category === activeCategory
+          )
+        );
 
   return (
     <section id="projects" className="py-20 bg-[#F8F9FA]">
@@ -132,22 +48,22 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => {
+          {Object.entries(filteredProjects).map(([id, project]) => {
             const Icon = project.icon;
             return (
               <div
-                key={index}
+                key={id}
                 className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
               >
                 <div className="relative overflow-hidden">
                   <img
-                    src={project.image}
+                    src={project.cover_image}
                     alt={project.title}
                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-[#023047]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <Link
-                      to={`/project/${project.id}`}
+                      to={`/project/${id}`}
                       className="bg-[#219EBC] text-white px-5 py-3 rounded-lg font-semibold hover:bg-[#219EBC]/80 transition-colors duration-300 flex items-center space-x-2"
                     >
                       <span>View Details</span>
@@ -173,7 +89,7 @@ const Projects = () => {
                         key={techIndex}
                         className="bg-[#FFB703]/20 text-[#FFB703] px-2 py-1 rounded text-xs font-medium"
                       >
-                        {tech}
+                        {tech.name}
                       </span>
                     ))}
                   </div>
