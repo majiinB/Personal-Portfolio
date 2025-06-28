@@ -257,14 +257,15 @@ export const projects: { [key: string]: Project } = {
     ],
     security: {
       description:
-        "This API uses JWT authentication with access tokens and refresh tokens. It also implements rate limiting to prevent abuse and CORS to control allowed origins.",
-      diagram: "/images/auth-flow.png", // optional
+        "Secures API endpoints using Firebase Authentication token verification via Firebase Admin SDK. CORS is enforced for origin control. Rate limiting is not applied due to per-request backend logging and moderation tracking in Firebase.",
+      diagram: "/projects/deck-ai-api/deck-ai-api-security.jpg",
     },
     testing: {
       description:
-        "The API was tested using integration tests with Jest and Supertest, focusing on endpoint response validation, error handling, and authentication flow.",
-      tools: ["Jest", "Supertest", "Swagger UI", "Postman"],
-      docsLink: "https://deck-api-docs.example.com",
+        "The API’s functionality, authentication flow, and AI integrations were manually tested using Postman. Automated testing was deferred due to compatibility challenges with ES Modules and Firebase Functions runtime, which limited the availability of suitable unit and integration testing libraries.",
+      tools: ["Postman"],
+      docsLink:
+        "https://github.com/majiinB/Deck_AI_API_Service/blob/main/README.md",
     },
     demo: "#",
     category: "APIs",
