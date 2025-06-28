@@ -1,14 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ComponentType, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import {
-  ArrowLeft,
-  Github,
-  ExternalLink,
-  Database,
-  Server,
-} from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, Database } from "lucide-react";
 import { projects } from "../data/projectsData";
+import ApiEndpointsSection from "../components/ApiComponents/ApiEndpoint";
+import AuthenticationSecuritySection from "../components/ApiComponents/AuthenticationSecuritySection";
+import ApiTestCoverageSection from "../components/ApiComponents/ApiTestCoverageSection";
 
 const ProjectDetail: React.FC = () => {
   useEffect(() => {
@@ -88,25 +85,32 @@ const ProjectDetail: React.FC = () => {
         </section>
 
         {/* Images Section */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold text-dark-accent mb-6">
-            Project Screenshots
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {project.images.map((image: string, index: number) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-2 border-[#FFB703]"
-              >
-                <img
-                  src={image}
-                  alt={`${project.title} screenshot ${index + 1}`}
-                  className="w-full h-64 object-contain transition-transform duration-300 hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
+        {project.images && (
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-dark-accent mb-6">
+              Project Screenshots
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {project.images.map((image: string, index: number) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-2 border-[#FFB703]"
+                >
+                  <img
+                    src={image}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    className="w-full h-64 object-contain transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Endpoint for APIs Section */}
+        {project.category === "APIs" && project.endpoints && (
+          <ApiEndpointsSection endpoints={project.endpoints} />
+        )}
 
         {/* Tech Stack Section */}
         <section className="mb-16">
@@ -157,11 +161,18 @@ const ProjectDetail: React.FC = () => {
               (component: any, index: number) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  className="bg-white p-6 rounded-xl shadow-lg border-2 border-dashed border-primary/50 hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="flex items-start space-x-3">
                     <div className="bg-primary/10 p-2 rounded-lg">
-                      <Server className="h-6 w-6 text-primary" />
+                      <DynamicIcon
+                        icon={
+                          component.icon as ComponentType<{
+                            className?: string;
+                          }>
+                        }
+                        className="text-primary text-3xl"
+                      />
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-dark-accent mb-2">
@@ -178,7 +189,7 @@ const ProjectDetail: React.FC = () => {
           </div>
 
           {/* Database Schema */}
-          <div className="bg-dark-accent rounded-xl p-8">
+          <div className="bg-dark-accent rounded-xl p-8 mb-16">
             <h3 className="text-2xl font-semibold text-white mb-6 flex items-center space-x-2">
               <Database className="h-6 w-6 text-primary" />
               <span>ERD Diagram</span>
@@ -192,6 +203,18 @@ const ProjectDetail: React.FC = () => {
               />
             </div>
           </div>
+
+          {/* Project Securiy Section */}
+          {project.category === "APIs" && project.security && (
+            <AuthenticationSecuritySection
+              security={project.security}
+              title={project.title}
+            />
+          )}
+          {/* Project Testing Section */}
+          {project.category === "APIs" && project.testing && (
+            <ApiTestCoverageSection testing={project.testing} />
+          )}
         </section>
       </div>
     </div>
