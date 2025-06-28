@@ -1,9 +1,9 @@
-import { Code, Lock, LucideIcon } from "lucide-react";
+import { Lock, LucideIcon } from "lucide-react";
 import { IconType } from "react-icons";
 import { BiMobile } from "react-icons/bi";
 import { DiDart, DiNodejs } from "react-icons/di";
 import { FaRobot } from "react-icons/fa";
-import { MdQuiz } from "react-icons/md";
+import { MdQuiz, MdShield } from "react-icons/md";
 import { PiCards } from "react-icons/pi";
 import {
   SiExpress,
@@ -193,44 +193,38 @@ export const projects: { [key: string]: Project } = {
     ],
     architecture: {
       description:
-        "The Deck AI API follows a service-oriented architecture pattern with modular separation of concerns. Each module is responsible for a specific domain operation, ensuring scalability, maintainability, and ease of integration with client applications.",
+        "The Deck AI API follows an RPC and service-oriented architecture pattern, where each module encapsulates AI-powered operations for specific domains. Traditional resource CRUD operations are handled by a separate Deck Management API. This ensures clean separation of concerns: the AI API focuses solely on functional calls requiring AI integration.",
 
       components: [
         {
           name: "Authentication Service",
           description:
-            "Manages user login, registration, and token-based authentication using JWT. It secures protected endpoints and handles token verification, refresh, and revocation mechanisms.",
+            "Secures protected API endpoints by validating Firebase-issued ID tokens. It ensures that only authenticated users can access sensitive operations like AI flashcard generation, content moderation, and quiz creation. This service verifies the authenticity of tokens and attaches decoded user information to each request, enabling downstream services to enforce access control where necessary.",
           icon: Lock,
         },
         {
-          name: "Deck Management Module",
+          name: "AI Service",
           description:
-            "Provides API endpoints for creating, updating, retrieving, and deleting flashcard decks. It manages deck metadata and associations with individual flashcards.",
-          icon: PiCards,
-        },
-        {
-          name: "Flashcard Management Module",
-          description:
-            "Handles operations related to flashcards within decks — including CRUD actions, batch creation, and AI-generated content moderation.",
-          icon: PiCards,
-        },
-        {
-          name: "AI Generation Service",
-          description:
-            "Integrates with Google Gemini API to generate AI-powered flashcards based on provided topics, descriptions, or uploaded PDF materials. Also responsible for moderating generated content to ensure accuracy and appropriateness.",
+            "A centralized service responsible for interfacing with the Google Gemini API. It handles AI prompt construction, content generation, and moderation requests. This service ensures consistent AI usage across multiple modules, eliminating redundancy and simplifying future updates or AI provider changes.",
           icon: FaRobot,
         },
         {
-          name: "Quiz Service",
+          name: "Flashcard Generation Module",
           description:
-            "Generates quizzes based on deck content, supporting different quiz modes like multiple-choice and fill-in-the-blank via API endpoints.",
-          icon: MdQuiz,
+            "Handles AI-powered flashcard generation requests based on provided topics, descriptions, or uploaded materials. Interfaces with the centralized AI Service for prompt construction and content generation.",
+          icon: PiCards,
         },
         {
-          name: "Rate Limiting & Request Validation",
+          name: "Moderation Module",
           description:
-            "Implements middleware to enforce request rate limiting and schema validation using tools like Zod and express-rate-limit to ensure API stability and security.",
-          icon: Code,
+            "Responsible for moderating flashcard decks requested for public publication. When a publish request is made, this module uses the AI Service to analyze the deck content and generate a moderation verdict. The verdict, along with relevant metadata, is stored as a moderation request in the database. Human moderators can then review these requests and approve or reject them through a separate moderation workflow.",
+          icon: MdShield,
+        },
+        {
+          name: "Quiz Generation Module",
+          description:
+            "Generates dynamic quizzes based on flashcard content, supporting multiple quiz modes. AI-generated quiz questions and options are constructed via the AI Service.",
+          icon: MdQuiz,
         },
       ],
 
@@ -241,16 +235,24 @@ export const projects: { [key: string]: Project } = {
     endpoints: [
       {
         method: "POST",
-        route: "/api/users/register",
-        description: "Creates a new user account.",
+        route: "/v2/deck/generate/flashcards/",
+        description: "Creates a new flashcard from prompt.",
         sampleRequest: `{
-          "email": "user@example.com",
-          "password": "123456"
-        }`,
+    "title": "US Constitution Amendments",
+    "subject": "Civics",
+    "topic": "American Government",
+    "deckDescription": "Summaries of the first ten (Bill of Rights) plus major subsequent amendments, their text highlights, and historical context.",
+    "description": "Summaries of the first ten (Bill of Rights) plus major subsequent amendments, their text highlights, and historical context.",
+    "numberOfFlashcards": 20
+}`,
         sampleResponse: `{
-          "message": "User registered successfully",
-          "userId": "abc123"
-        }`,
+    "status": 200,
+    "request_owner_id": "Y3o8pxyMZre0wOqHh6Ip98ckBmO2",
+    "message": "Prompt was sent successfully",
+    "data": {
+        "deck_id": "93TFG2vOrT76OCRSf7Lz"
+    }
+}`,
       },
     ],
     security: {
