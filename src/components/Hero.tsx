@@ -56,15 +56,25 @@ const Hero: React.FC = () => {
             <div className="bg-gray-900 rounded-lg shadow-2xl border border-primary/30">
               {/* Terminal Header */}
               <div className="bg-gray-800 px-4 py-3 rounded-t-lg flex items-center space-x-2">
+                {/* Left control circles */}
                 <div className="flex space-x-2">
                   <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                   <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
+
+                {/* Center text */}
                 <div className="flex-1 text-center">
                   <span className="text-gray-300 text-sm font-mono">
                     terminal - arthur@portfolio
                   </span>
+                </div>
+
+                {/* Invisible spacer to balance the layout */}
+                <div className="flex space-x-2 opacity-0">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 </div>
               </div>
 
