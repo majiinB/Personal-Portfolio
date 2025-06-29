@@ -236,7 +236,8 @@ export const projects: { [key: string]: Project } = {
       {
         method: "POST",
         route: "/v2/deck/generate/flashcards/",
-        description: "Creates a new flashcard from prompt.",
+        description:
+          "Creates a new flashcard from a prompt or study material (PDF).",
         sampleRequest: `{
     "title": "US Constitution Amendments",
     "subject": "Civics",
@@ -251,6 +252,221 @@ export const projects: { [key: string]: Project } = {
     "message": "Prompt was sent successfully",
     "data": {
         "deck_id": "93TFG2vOrT76OCRSf7Lz"
+    }
+}`,
+      },
+      {
+        method: "POST",
+        route: "/v2/deck/generate/quiz/",
+        description: "Creates and retrieves quiz items from the deck",
+        sampleRequest: `{
+    "deckId": "93TFG2vOrT76OCRSf7Lz",
+    "numOfQuiz": 5
+}`,
+        sampleResponse: `{
+    "status": 200,
+    "request_owner_id": "Y3o8pxyMZre0wOqHh6Ip98ckBmO2",
+    "message": "Quiz creation for deck with id:93TFG2vOrT76OCRSf7Lz is successful",
+    "data": {
+        "quizContent": {
+            "id": "7b6iLYgzBoaArwQRZBrR",
+            "associated_deck_id": "93TFG2vOrT76OCRSf7Lz",
+            "created_at": {
+                "_seconds": 1751196233,
+                "_nanoseconds": 527000000
+            },
+            "is_deleted": false,
+            "quiz_type": "multiple-choice",
+            "updated_at": {
+                "_seconds": 1751196233,
+                "_nanoseconds": 527000000
+            },
+            "questions": [
+                {
+                    "id": "8LvziTQDzCD4gGE9I0XC",
+                    "question": "What is the collective name for the first ten amendments to the U.S. Constitution?",
+                    "created_at": {
+                        "_seconds": 1751196233,
+                        "_nanoseconds": 527000000
+                    },
+                    "related_flashcard_id": "HrEdUu8qBpHWwKcbbJwW",
+                    "choices": [
+                        {
+                            "id": "7lnwAsB8u9ImtAi3tI6B",
+                            "text": "Emancipation Proclamation",
+                            "is_correct": false
+                        },
+                        {
+                            "id": "Hxc2plz2Ptqc997rTHVW",
+                            "text": "Bill of Rights",
+                            "is_correct": true
+                        },
+                        {
+                            "id": "RZxhQe4llENt1sFiKIAC",
+                            "text": "Declaration of Independence",
+                            "is_correct": false
+                        },
+                        {
+                            "id": "nx38QaFo3vHpKxSAUamE",
+                            "text": "Articles of Confederation",
+                            "is_correct": false
+                        }
+                    ]
+                },
+                {
+                    "id": "Dht9CMfsNiC2oUxtbavy",
+                    "question": "What is the term for incriminating oneself, potentially leading to criminal prosecution?",
+                    "created_at": {
+                        "_seconds": 1751196233,
+                        "_nanoseconds": 527000000
+                    },
+                    "related_flashcard_id": "a0qFv9reKzyZ5i19kK3e",
+                    "choices": [
+                        {
+                            "id": "4IhVBYqjaDnIOFXUAFAV",
+                            "text": "Due Process",
+                            "is_correct": false
+                        },
+                        {
+                            "id": "ZNtiRL2voMR4sxyV1BjA",
+                            "text": "Self-Incrimination",
+                            "is_correct": true
+                        },
+                        {
+                            "id": "ZYtG8jdsHMOCrnecnZ25",
+                            "text": "Habeas Corpus",
+                            "is_correct": false
+                        },
+                        {
+                            "id": "p6iemTO2s2liYpWFo2q0",
+                            "text": "Double Jeopardy",
+                            "is_correct": false
+                        }
+                    ]
+                },
+                {
+                    "id": "rGHyBuZSFMo604HQ1EG9",
+                    "question": "Which amendment granted women the right to vote?",
+                    "created_at": {
+                        "_seconds": 1751196233,
+                        "_nanoseconds": 527000000
+                    },
+                    "related_flashcard_id": "yfZMEu99JyyKPZQSpvhV",
+                    "choices": [
+                        {
+                            "id": "SDrCFa9lFauBfqzNznET",
+                            "text": "Fifteenth Amendment",
+                            "is_correct": false
+                        },
+                        {
+                            "id": "ZMVKrkxWRLk7kuDTAa4c",
+                            "text": "Fourteenth Amendment",
+                            "is_correct": false
+                        },
+                        {
+                            "id": "lPefEAoguAir5iO1SU3J",
+                            "text": "Nineteenth Amendment",
+                            "is_correct": true
+                        },
+                        {
+                            "id": "rlpm9IUMWhe1ZovpHKeu",
+                            "text": "Thirteenth Amendment",
+                            "is_correct": false
+                        }
+                    ]
+                },
+                {
+                    "id": "hnP2ndrANTchBe5dK2Na",
+                    "question": "If a power is not given to the federal government nor denied to the states, who retains that power?",
+                    "created_at": {
+                        "_seconds": 1751196233,
+                        "_nanoseconds": 527000000
+                    },
+                    "related_flashcard_id": "H29ujSqQVX5bHDKtlM2q",
+                    "choices": [
+                        {
+                            "id": "D1pXAsTSFRmx7YfoCvSw",
+                            "text": "Reserved Powers",
+                            "is_correct": true
+                        },
+                        {
+                            "id": "K5x5lqUFE1rUBhqwZafQ",
+                            "text": "Concurrent Powers",
+                            "is_correct": false
+                        },
+                        {
+                            "id": "a4rU5iVnWeNBpwP0fFk7",
+                            "text": "Implied Powers",
+                            "is_correct": false
+                        },
+                        {
+                            "id": "ecXdGGBoFbhMT0hSQga7",
+                            "text": "Enumerated Powers",
+                            "is_correct": false
+                        }
+                    ]
+                },
+                {
+                    "id": "YRHqfNA7KxTX0Dz8ah1W",
+                    "question": "What is the general term for the right to participate in political elections?",
+                    "created_at": {
+                        "_seconds": 1751196233,
+                        "_nanoseconds": 527000000
+                    },
+                    "related_flashcard_id": "mG1pZUPRPmWxxdrew3AV",
+                    "choices": [
+                        {
+                            "id": "4ViSmQrHdtrcMQeGBKXf",
+                            "text": "Suffrage",
+                            "is_correct": true
+                        },
+                        {
+                            "id": "SE3UEWKGLY7EXzPh9KPv",
+                            "text": "Recall Election",
+                            "is_correct": false
+                        },
+                        {
+                            "id": "caFo1VZa3Ln7Qj9e0Aae",
+                            "text": "Referendum",
+                            "is_correct": false
+                        },
+                        {
+                            "id": "m12F96dlvdxmR7WLqcjU",
+                            "text": "Civil Disobedience",
+                            "is_correct": false
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}`,
+      },
+      {
+        method: "POST",
+        route: "/v2/deck/moderate",
+        description: "Checks and moderates the content of a deck",
+        sampleRequest: `{
+    "deckId": "93TFG2vOrT76OCRSf7Lz"
+}`,
+        sampleResponse: `{
+    "status": 200,
+    "request_owner_id": "Y3o8pxyMZre0wOqHh6Ip98ckBmO2",
+    "message": "Moderation review successful",
+    "data": {
+        "quiz_data": {
+            "overall_verdict": {
+                "is_appropriate": false,
+                "moderation_decision": "content is inappropriate",
+                "flagged_cards": [
+                    {
+                        "definition": "Being prosecuted or punished twice for the same offense.",
+                        "term": "Stupid shit",
+                        "reason": "The term contains profanity and offensive language."
+                    }
+                ]
+            }
+        }
     }
 }`,
       },
