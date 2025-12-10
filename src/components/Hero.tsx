@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   Database,
   Server,
@@ -6,11 +7,11 @@ import {
   Terminal,
   GitBranch,
   Globe,
-  Download,
   Github,
   Linkedin,
   Bot,
   Facebook,
+  EyeIcon,
 } from "lucide-react";
 
 const Hero: React.FC = () => {
@@ -115,7 +116,9 @@ const Hero: React.FC = () => {
                   <div className="text-soft-highlight">Python</div>
                   <div className="text-soft-highlight">PostgreSQL</div>
                   <div className="text-soft-highlight">MongoDB</div>
-                  <div className="text-soft-highlight">Firebase</div>
+                  <div className="text-soft-highlight">
+                    Google Cloud Platform
+                  </div>
                 </div>
 
                 <div className="text-green-400 mt-4">
@@ -175,15 +178,13 @@ const Hero: React.FC = () => {
 
             <div className="flex space-x-4">
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-delay-3">
-                <a
-                  href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/resume"
                   className="bg-[#219EBC] hover:bg-[#1a7a94] text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                 >
-                  <Download size={20} />
-                  <span>Download Resume</span>
-                </a>
+                  <EyeIcon size={20} />
+                  <span>View Resume</span>
+                </Link>
                 <div className="flex space-x-4">
                   <a
                     href="https://github.com/majiinB"
@@ -199,13 +200,13 @@ const Hero: React.FC = () => {
                   >
                     <Linkedin size={24} />
                   </a>
-                  <a
+                  {/* <a
                     href="https://www.facebook.com/profile.php?id=100008476154521"
                     className="w-12 h-12 bg-white hover:bg-[#219EBC] text-[#8E9AAF] hover:text-white rounded-lg flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
                     aria-label="Facebook"
                   >
                     <Facebook size={24} />
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

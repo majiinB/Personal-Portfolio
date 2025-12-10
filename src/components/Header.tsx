@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import { Menu, X, Server } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "../../public/favicon.png";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +14,8 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 group">
-            <Server className="h-8 w-8 text-primary group-hover:text-soft-highlight transition-colors duration-300" />
+            {/* <Server className="h-8 w-8 text-primary group-hover:text-soft-highlight transition-colors duration-300" /> */}
+            <img src={logo} alt="Logo" className="h-9 w-9 text-primary" />
             <span className="text-white font-mono text-xl font-bold">
               arthur.dev
             </span>
