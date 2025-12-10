@@ -48,12 +48,12 @@ const Header: React.FC = () => {
               ~/skills
             </ScrollLink>
             <ScrollLink
-              to="certifications"
+              to="credentials"
               smooth={true}
               duration={500}
               className="text-white hover:text-primary transition-colors duration-300 font-mono cursor-pointer"
             >
-              ~/certifications
+              ~/credentials
             </ScrollLink>
             <ScrollLink
               to="experience"
@@ -126,12 +126,12 @@ const Header: React.FC = () => {
                 ~/skills
               </ScrollLink>
               <ScrollLink
-                to="certifications"
+                to="credentials"
                 smooth={true}
                 duration={500}
                 className="text-white hover:text-primary transition-colors duration-300 font-mono cursor-pointer"
               >
-                ~/certifications
+                ~/credentials
               </ScrollLink>
               <ScrollLink
                 to="projects"

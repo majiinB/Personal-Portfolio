@@ -1,27 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Award, EyeIcon } from "lucide-react";
-import { certifications, categories } from "../data/certificationsData";
+import { certificates, categories } from "../data/certificateData";
 
-const Certifications = () => {
+const Certificates = () => {
   const [activeCategory, setActiveCategory] = React.useState("All");
 
-  const filteredCertifications =
+  const filteredCertificates =
     activeCategory === "All"
-      ? certifications
-      : certifications.filter((cert) => cert.category === activeCategory);
+      ? certificates
+      : certificates.filter((cert) => cert.category === activeCategory);
 
   return (
     <section id="certifications" className="py-20 bg-[#F8F9FA]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-[#023047] mb-4">
-            Certifications
+            Certificates & Academic Activities
           </h2>
           <div className="w-20 h-1 bg-[#219EBC] mx-auto mb-6"></div>
           <p className="text-[#8E9AAF] text-lg max-w-2xl mx-auto">
-            A collection of industry-recognized certifications validating my
-            technical knowledge and professional competency.
+            A collection of certificates demonstrating my continuous learning
+            and specialization in tech fields.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ const Certifications = () => {
 
         {/* Certifications Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredCertifications.map((cert, index) => (
+          {filteredCertificates.map((cert, index) => (
             <div
               key={index}
               className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
@@ -107,4 +107,4 @@ const Certifications = () => {
   );
 };
 
-export default Certifications;
+export default Certificates;

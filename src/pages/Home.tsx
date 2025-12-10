@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 import Experience from "../components/Experience";
 import Certifications from "../components/Certifications";
 import { useLocation } from "react-router-dom";
+import Certificates from "../components/Certificates";
 
 const Home: React.FC = () => {
   const { hash } = useLocation();
@@ -41,8 +42,9 @@ const Home: React.FC = () => {
         <Skills />
       </Element>
 
-      <Element name="certifications">
+      <Element name="credentials">
         <Certifications />
+        <Certificates />
       </Element>
 
       <Element name="experience">
