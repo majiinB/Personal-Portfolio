@@ -4,6 +4,17 @@ import { GoOrganization } from "react-icons/go";
 const Experience = () => {
   const experiences = [
     {
+      title: "Web Deployment Coordinator",
+      company:
+        "University of Makati Educational Development Foundation Inc (UMEDFI)",
+      location: "Remote",
+      period: "September 2025 - Present",
+      description: [
+        "Deploy WordPress sites on GoDaddy and manage domains and hosting",
+      ],
+      technologies: ["GoDaddy", "WordPress"],
+    },
+    {
       title: "Backend Developer & API Integrator (Academic Project)",
       company: "Odyssey",
       location: "On-site / Remote",
