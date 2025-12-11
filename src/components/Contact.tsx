@@ -1,29 +1,7 @@
-import React, { useState } from "react";
-import { Mail, Github, Linkedin, MapPin, Send, Facebook } from "lucide-react";
+import React from "react";
+import { Mail, Github, Linkedin, MapPin } from "lucide-react";
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-  };
-
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-6">
@@ -33,43 +11,38 @@ const Contact: React.FC = () => {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
           <p className="text-lg text-subtle-text max-w-3xl mx-auto leading-relaxed">
-            I'm always open to discussing new opportunities, interesting
-            projects, or just having a chat about technology.
+            Whether you're looking for a backend developer for your team, have a
+            project in mind, or just want to connect with a fellow developer,
+            I'd love to hear from you.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="max-w-4xl mx-auto">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold text-dark-accent mb-6">
-                Let's Connect
-              </h3>
-              <p className="text-subtle-text leading-relaxed mb-8">
-                Whether you're looking for a backend developer for your team,
-                have a project in mind, or just want to connect with a fellow
-                developer, I'd love to hear from you.
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
+            <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <a
+                href="mailto:arthurartugue392@gmail.com"
+                className="flex items-center space-x-4 bg-neutral-bg p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
                 <div className="bg-primary/10 p-3 rounded-lg">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-dark-accent">Email</h4>
-                  <p className="text-subtle-text">arthurartugue392@gmail.com</p>
+                  <p className="text-subtle-text text-sm">
+                    arthurartugue392@gmail.com
+                  </p>
                 </div>
-              </div>
+              </a>
 
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-4 bg-neutral-bg p-6 rounded-xl shadow-md">
                 <div className="bg-primary/10 p-3 rounded-lg">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-dark-accent">Location</h4>
-                  <p className="text-subtle-text">
+                  <p className="text-subtle-text text-sm">
                     San Pedro, Laguna, Philippines
                   </p>
                 </div>
@@ -77,117 +50,31 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Social Links */}
-            <div>
-              <h4 className="font-semibold text-dark-accent mb-4">
-                Find me on
+            <div className="text-center">
+              <h4 className="font-semibold text-dark-accent mb-6 text-lg">
+                Connect with me on social media
               </h4>
-              <div className="flex space-x-4">
+              <div className="flex justify-center space-x-4">
                 <a
                   href="https://github.com/majiinB"
-                  className="bg-dark-accent text-white p-3 rounded-lg hover:bg-primary transition-colors duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-dark-accent text-white p-4 rounded-lg hover:bg-primary transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  aria-label="GitHub"
                 >
                   <Github className="h-6 w-6" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/arthur-artugue-6351162b2/"
-                  className="bg-dark-accent text-white p-3 rounded-lg hover:bg-primary transition-colors duration-300"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-dark-accent text-white p-4 rounded-lg hover:bg-primary transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  aria-label="LinkedIn"
                 >
                   <Linkedin className="h-6 w-6" />
                 </a>
-                <a
-                  href="https://www.facebook.com/profile.php?id=100008476154521"
-                  className="bg-dark-accent text-white p-3 rounded-lg hover:bg-primary transition-colors duration-300"
-                >
-                  <Facebook className="h-6 w-6" />
-                </a>
               </div>
             </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-neutral-bg p-8 rounded-xl shadow-lg">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-dark-accent mb-2"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                    required
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-dark-accent mb-2"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-dark-accent mb-2"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                  required
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-dark-accent mb-2"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"
-                  required
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-primary hover:bg-primary/80 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 hover:shadow-lg hover:shadow-primary/25"
-              >
-                <span>Send Message</span>
-                <Send className="h-5 w-5" />
-              </button>
-            </form>
           </div>
         </div>
       </div>
