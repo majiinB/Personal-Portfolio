@@ -71,11 +71,11 @@ const Footer: React.FC = () => {
               {[
                 "Node.js",
                 "Python",
-                "PostgreSQL",
-                "MongoDB",
-                "Java",
-                "Express",
+                "Express.js",
                 "FastAPI",
+                "Java",
+                "C#",
+                "PostgreSQL",
                 "Google Cloud Platform",
               ].map((tech, index) => (
                 <span key={index} className="text-sm text-gray-300 font-mono">

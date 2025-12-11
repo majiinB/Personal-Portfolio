@@ -10,7 +10,6 @@ import {
   Github,
   Linkedin,
   Bot,
-  Facebook,
   EyeIcon,
 } from "lucide-react";
 
@@ -109,13 +108,13 @@ const Hero: React.FC = () => {
                   <span className="text-white">$ ls skills/</span>
                 </div>
                 <div className="text-white mt-2 grid grid-cols-2 gap-2">
-                  <div className="text-soft-highlight">Java</div>
-                  <div className="text-soft-highlight">PHP</div>
                   <div className="text-soft-highlight">Node.js</div>
-                  <div className="text-soft-highlight">Dart</div>
                   <div className="text-soft-highlight">Python</div>
+                  <div className="text-soft-highlight">Express.js</div>
+                  <div className="text-soft-highlight">FastAPI</div>
+                  <div className="text-soft-highlight">Java</div>
+                  <div className="text-soft-highlight">C#</div>
                   <div className="text-soft-highlight">PostgreSQL</div>
-                  <div className="text-soft-highlight">MongoDB</div>
                   <div className="text-soft-highlight">
                     Google Cloud Platform
                   </div>
