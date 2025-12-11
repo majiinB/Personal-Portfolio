@@ -1,5 +1,6 @@
 import React from "react";
-import { Server, Code, Coffee } from "lucide-react";
+import { Code, Coffee } from "lucide-react";
+import logo from "../../public/favicon.png";
 
 const Footer: React.FC = () => {
   return (
@@ -9,7 +10,8 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Server className="h-8 w-8 text-primary" />
+              {/* <Server className="h-8 w-8 text-primary" /> */}
+              <img src={logo} alt="Logo" className="h-9 w-9 text-primary" />
               <span className="text-xl font-mono font-bold">arthur.dev</span>
             </div>
             <p className="text-gray-300 leading-relaxed">
@@ -74,7 +76,7 @@ const Footer: React.FC = () => {
                 "Java",
                 "Express",
                 "FastAPI",
-                "Firebase",
+                "Google Cloud Platform",
               ].map((tech, index) => (
                 <span key={index} className="text-sm text-gray-300 font-mono">
                   {tech}
@@ -92,7 +94,7 @@ const Footer: React.FC = () => {
             <Coffee className="h-4 w-4 text-primary" />
           </p>
           <p className="text-sm text-subtle-text mt-2">
-            © 2025 Arthur Artugue. All rights reserved.
+            © {new Date().getFullYear()} Arthur Artugue. All rights reserved.
           </p>
         </div>
       </div>
