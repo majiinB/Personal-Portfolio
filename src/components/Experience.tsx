@@ -4,6 +4,26 @@ import { GoOrganization } from "react-icons/go";
 const Experience = () => {
   const experiences = [
     {
+      title: "Software Developer",
+      company:
+        "JP Morgan – Virtual Software Engineering Job Simulation (Forage)",
+      location: "Remote",
+      period: "December 2025",
+      description: [
+        "Implemented Kafka integration for real-time transaction processing, ensuring accurate event-driven workflows.",
+        "Built transactional services using Spring Data JPA with H2 database for balance updates, entity modeling, and validation.",
+        "Exposed REST endpoints to query user balances in JSON, supporting seamless client interactions.",
+      ],
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "Kafka",
+        "Spring Data JPA",
+        "H2 Database",
+        "REST API",
+      ],
+    },
+    {
       title: "Web Deployment Coordinator",
       company:
         "University of Makati Educational Development Foundation Inc (UMEDFI)",

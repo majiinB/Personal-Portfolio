@@ -20,12 +20,12 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-[#023047] mb-4">
-            Featured Projects
+            Projects & Learning Journey
           </h2>
           <div className="w-20 h-1 bg-[#219EBC] mx-auto mb-6"></div>
           <p className="text-[#8E9AAF] text-lg max-w-2xl mx-auto">
-            A collection of projects that showcase my skills and passion for
-            development
+            Real projects where I learned backend development, solved problems,
+            and grew as an engineer
           </p>
         </div>
 
@@ -56,17 +56,34 @@ const Projects = () => {
                 className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
               >
                 <div className="relative overflow-hidden">
-                  <img
-                    src={project.cover_image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
+                  {project.cover_image ? (
+                    <img
+                      src={project.cover_image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                      onError={(e) => {
+                        e.currentTarget.style.display = "none";
+                        const parent = e.currentTarget.parentElement;
+                        if (parent) {
+                          parent.classList.add(
+                            "bg-gradient-to-br",
+                            "from-[#219EBC]/20",
+                            "to-[#023047]/20"
+                          );
+                        }
+                      }}
+                    />
+                  ) : (
+                    <div className="w-full h-48 bg-gradient-to-br from-[#219EBC]/20 to-[#023047]/20 flex items-center justify-center">
+                      <Icon size={64} className="text-[#219EBC]/40" />
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-[#023047]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <Link
                       to={`/project/${id}`}
                       className="bg-[#219EBC] text-white px-5 py-3 rounded-lg font-semibold hover:bg-[#219EBC]/80 transition-colors duration-300 flex items-center space-x-2"
                     >
-                      <span>View Details</span>
+                      <span>View My Process</span>
                       <ExternalLink className="h-4 w-4" />
                     </Link>
                   </div>
@@ -79,12 +96,12 @@ const Projects = () => {
                   <h3 className="text-xl font-semibold text-[#023047] mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-[#8E9AAF] text-sm mb-4 line-clamp-3">
+                  <p className="text-[#8E9AAF] text-sm mb-4 line-clamp-2">
                     {project.description}
                   </p>
 
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech, techIndex) => (
+                    {project.technologies.slice(0, 4).map((tech, techIndex) => (
                       <span
                         key={techIndex}
                         className="bg-[#FFB703]/20 text-[#FFB703] px-2 py-1 rounded text-xs font-medium"
@@ -92,10 +109,15 @@ const Projects = () => {
                         {tech.name}
                       </span>
                     ))}
+                    {project.technologies.length > 4 && (
+                      <span className="bg-[#8E9AAF]/20 text-[#8E9AAF] px-2 py-1 rounded text-xs font-medium">
+                        +{project.technologies.length - 4} more
+                      </span>
+                    )}
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <span className="text-[#8E9AAF] text-sm font-medium">
+                    <span className="text-[#8E9AAF] text-xs">
                       {project.category}
                     </span>
                     <div className="flex space-x-3">
